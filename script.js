@@ -11,7 +11,7 @@ buttons.addEventListener("click", (event) => {
   } 
   else if (target.classList.contains("operator")) {
     let lastChar = display.value[display.value.length - 1]; 
-    if (["+", "-", "*", "/"].includes(lastChar)) {
+    if (["+", "-", "*", "/","^"].includes(lastChar)) {
       display.value = display.value.slice(0, -1) + target.innerHTML; 
     } else {
       display.value += target.innerHTML;
@@ -43,7 +43,7 @@ buttons.addEventListener("click", (event) => {
 document.body.addEventListener("keypress", (event) => {
   let target = event.key; //key pressed
   const numbersArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9","."];
-  const operatorsArray = ["+", "-", "*", "/"];
+  const operatorsArray = ["+", "-", "*", "/","^"];
   if (target === "c") {
     display.value = "";
   } else if (numbersArray.includes(target)) {
