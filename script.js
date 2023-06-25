@@ -22,7 +22,7 @@ buttons.addEventListener("click", (event) => {
     if (display.value.length !==0) {
       //handling unexpected syntax expressions
       try {
-        display.value = eval(display.value);
+         display.value = eval(display.value.replace(/\^/g, "**"));
       } catch {
         display.value = "Syntax Error!";
       }
@@ -41,7 +41,7 @@ buttons.addEventListener("click", (event) => {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 document.body.addEventListener("keypress", (event) => {
-  let target = event.key; //key pressed
+  let target = event.key; 
   const numbersArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9","."];
   const operatorsArray = ["+", "-", "*", "/","^"];
   if (target === "c") {
@@ -59,7 +59,7 @@ document.body.addEventListener("keypress", (event) => {
     if (display.value.length !== 0) {
       //handling unexpected syntax expressions
       try {
-        display.value = eval(display.value);
+        display.value = eval(display.value.replace(/\^/g, "**"));
       } catch (error) {
         display.value = "Syntax Error!";
       }
