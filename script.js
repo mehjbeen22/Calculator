@@ -49,9 +49,9 @@ document.body.addEventListener("keypress", (event) => {
   } else if (numbersArray.includes(target)) {
     display.value += target;
   } else if (operatorsArray.includes(target)) {
-    let lastChar = display.value[display.value.length - 1]; //last character of string
+    let lastChar = display.value[display.value.length - 1];
     if (operatorsArray.includes(lastChar)) {
-      display.value = display.value.slice(0, -1) + target; //eliminates repeated operators
+      display.value = display.value.slice(0, -1) + target;
     } else {
       display.value += target;
     }
